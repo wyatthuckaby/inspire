@@ -42,8 +42,14 @@ server.use('/api/todo', todoRouter);
 
 server.all("/*", function(req, res) {
     console.log(`Rogue ${req.method} request @${req.connection.remoteAddress}`);
-    res.send({ message: "Invalid request" });
-})
+    res.send({
+        method: `${req.method}`,
+        sourceip: `${req.connection.remoteAddress}`,
+        message: "Invalid request",
+        aborted: `${req.aborted}`,
+        body: `${req.body}`
+    });
+});
 
 /**
  * SERVER LISTENER
