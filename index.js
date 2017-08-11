@@ -5,15 +5,45 @@
  */
 
 
-
+/**
+ * Dependendies
+ */
 var express = require('express');
 var bodyParser = require('body-parser');
 var serverConf = require('./config/server/local.js');
+var database = require('./config/db/mlab-config.js');
+
+
+/**
+ * Lib Declarations
+ */
 var server = express();
 
-
+/**
+ * MIDDLEWARE
+ */
 server.use(express.static(__dirname + "/www"));
+server.use(bodyParser.json()); //JSON middleware
+server.use(bodyParser.urlencoded({ extended: true }));
 
+
+/**
+ * SERVER ROUTERS
+ */
+
+//todo router
+var todoRouter = require("./routes/todos");
+server.use('/api/todo', todoRouter);
+
+
+/**
+ * CATCH ALL
+ */
+
+server.all("/*", function(req, res) {
+    console.log(`Rogue ${req.method} request @${req.connection.remoteAddress}`);
+    res.send({ message: "Invalid request" });
+})
 
 /**
  * SERVER LISTENER
