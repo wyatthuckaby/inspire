@@ -40,7 +40,7 @@ server.use('/api/todo', todoRouter);
  * CATCH ALL
  */
 
-server.all("/*", function(req, res) {
+server.all("/api/*", function(req, res) {
     console.log(`Rogue ${req.method} request @${req.connection.remoteAddress}`);
     res.send({
         method: `${req.method}`,
