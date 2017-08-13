@@ -8,38 +8,53 @@
 </head>
 
 <body>
-    <div class="container-fluid backdrop">
+    <div class="container-fluid" id="primaryContainer">
         <!-- Weather -->
-        <div class="col-xs-12">
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
-                <div class="col-xs-12 col-sm-4">
-                    <!-- Weather -->
-                    <div id="weather">
-                        <h3 class="text-center"> Weather </h3>
-                    </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4"></div>
+            <div class="col-xs-12 col-sm-2">
+                <!-- Weather -->
+                <div id="weather">
                 </div>
             </div>
+
+            <div class="col-sm-2"></div>
         </div>
 
         <!-- Quote -->
-        <div class="col-xs-12">
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-xs-12 col-sm-4" id="quote">
+                <!--this will always be in the center-->
             </div>
+            <div class="col-sm-4"></div>
+
         </div>
 
         <!-- Todo list -->
-        <div class="col-xs-12">
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-xs-12 col-sm-4">
+                <form class="form-inline" onsubmit="app.controllers.todoController.addTodo(event);">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="todoAddBox" placeholder="New Item">
+                        <button type="submit" class="btn">Add</button>
+                    </div>
+                </form>
+
+                <div class="todoList">
+
+                </div>
             </div>
+
+            <div class="col-sm-4"></div>
         </div>
+
+
+
+    </div>
+    </div>
     </div>
 
 

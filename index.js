@@ -28,6 +28,11 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 
 /**
+ * CDNS
+ */
+server.use("/cdn/owi", express.static(__dirname + "/node_modules/open-weather-icons/dist"));
+
+/**
  * SERVER ROUTERS
  */
 

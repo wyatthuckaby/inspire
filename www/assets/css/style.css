@@ -1,0 +1,16 @@
+#primaryContainer {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#weather {
+    color: white;
+    background-color: rgba(45, 45, 45, 0.4);
+}
+
+#quote {
+    color: white;
+    background-color: rgba(45, 45, 45, 0.4);
+}
